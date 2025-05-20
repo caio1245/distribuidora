@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Vendas</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://unpkg.com/htmx.org@2.0.4" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1>Registro de Vendas</h1>
+
+    <!-- Formulário para registrar venda -->
+    <form method="POST" action="/vendas">
+        <label for="produto_id">Produto:</label>
+        <select id="produto_id" name="produto_id" required>
+            {% for produto in produtos %}
+            <option value="{{ produto[0] }}">{{ produto[1] }} - R$ {{ produto[2]|round(2) }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="quantidade">Quantidade:</label>
+        <input type="number" id="quantidade" name="quantidade" min="1" required>
+        <br>
+        <button type="submit">Registrar Venda</button>
+    </form>
+
+    <!-- Lista de vendas registradas -->
+    <h2>Vendas Registradas</h2>
+    {% if vendas %}
+    <ul>
+        {% for venda in vendas %}
+        <li>
+            {{ venda['produto'] }} - {{ venda['quantidade'] }} unidades - R$ {{ venda['total']|round(2) }}
+            <!-- <form action="/remover_venda/{{ venda['id'] }}" method="post" style="display:inline;"> -->
+                <button hx-post="/remover_venda/{{ venda['id'] }}" hx-target="body" class="btn-remover">Remover</button>
+            <!-- </form> -->
+             <!-- <a href="/nota_fiscal/{{ venda[0] }}" class="btn">Imprimir Nota Fiscal</a> -->
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>Nenhuma venda registrada até agora.</p>
+    {% endif %}
+
+    <a href="/">Voltar</a>
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+/* Estilos Globais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    color: #0056b3;
+    text-align: center;
+    margin-top: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #0056b3;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #003366;
+}
+
+/* Navegação */
+nav {
+    text-align: center;
+    margin: 20px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    font-size: 1.2em;
+    border-bottom: 2px solid transparent;
+    padding: 5px;
+}
+
+nav ul li a:hover {
+    border-bottom: 2px solid #0056b3;
+}
+
+/* Formulários */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    font-weight: bold;
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input, form select, form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #0056b3;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #003366;
+}
+
+/* Listas */
+ul {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    list-style: none;
+}
+
+ul li {
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+ul li:last-child {
+    border-bottom: none;
+}
+
+/* Rodapé */
+a {
+    display: inline-block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-remover {
+    background-color: #e74c3c; /* vermelho forte */
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    /* width: 40px; */
+
+}
+
+.btn-remover:hover {
+    background-color: #c0392b; /* vermelho um pouco mais escuro no hover */
+
+}
+
+

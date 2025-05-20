@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório Diário</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <h1>Relatório Diário</h1>
+    <p>Total de Vendas: R$ {{ total_vendas if total_vendas else 0.00 }}</p>
+    <p>Total de Transações: {{ total_transacoes if total_transacoes else 0 }}</p>
+    <a href="/">Voltar</a>
+</body>
+</html>
